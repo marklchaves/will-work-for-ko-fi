@@ -90,3 +90,8 @@ This example aligns the button to the right.
 }
 ```
 
+---
+
+## I'll Drink to That ;-)
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/D1D7YARD)
