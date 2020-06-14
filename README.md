@@ -21,7 +21,7 @@ This custom Gutenberg Block (CGB) for the Ko-fi donation button allows you to:
 1. Upload the plugin zip file to the `/wp-content/plugins/will-work-for-ko-fi` directory, or install the plugin through the WordPress plugins page directly.
 1. Activate the plugin through the 'Plugins' page.
 
-_Will Work for Ko-fi_ needs the [Lazy Blocks](https://wordpress.org/plugins/lazy-blocks/) plugin to run properly. Please install _Lazy Blocks_.
+Edit: <strike>Will Work for Ko-fi_ needs the Lazy Blocks plugin to run properly. Please install Lazy Blocks.</strike>
 
 ## Usage
 
@@ -46,10 +46,6 @@ It sure is. The Ko-fi button widget code comes from https://ko-fi.com/manage/wid
   kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'D1D7YARD');kofiwidget2.draw();
 </script> 
 ```
-
-### Why don't I see the Will Work for Ko-fi block come up when adding a block?
-
-Make sure the _Will Work for Ko-fi_ and _Lazy Blocks_ plugins are installed and activated. Yes, you need them both.
 
 ### How can I change the alignment for the H2 heading and button?
 
