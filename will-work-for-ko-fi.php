@@ -11,7 +11,7 @@
  * Plugin Name:       Will Work for Ko-fi
  * Plugin URI:        https://github.com/marklchaves/will-work-for-ko-fi
  * Description:       Custom Gutenberg Block (CGB) for the Ko-fi donation button.
- * Version:           1.0.0
+ * Version:           1.2.0
  * Author:            caught my eye
  * Author URI:        https://www.caughtmyeye.cc
  * License:           GPL-2.0+
@@ -19,18 +19,35 @@
  * Text Domain:       will-work-for-ko-fi
  */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
+define( 'WILL_WORK_FOR_KO_FI_SLIDER_PLUGIN_NAME', 'will-work-for-ko-fi-plugin' );
+define( 'WILL_WORK_FOR_KO_FI_SLIDER_PLUGIN_VERSION', '1.2.0' );
+
 // Define path and URL to the LZB plugin.
-define( 'MY_LZB_PATH', plugin_dir_path( __FILE__ ) . '/inc/lzb/' );
-define( 'MY_LZB_URL', plugin_dir_url( __FILE__ ) . 'inc/lzb/' );
+define( 'WW4KOFI_LZB_PATH', plugin_dir_path( __FILE__ ) . '/inc/lzb/' );
+define( 'WW4KOFI_LZB_URL', plugin_dir_url( __FILE__ ) . 'inc/lzb/' );
 
 // Include the LZB plugin.
-require_once MY_LZB_PATH . 'lazy-blocks.php';
+require_once WW4KOFI_LZB_PATH . 'lazy-blocks.php';
 
 // Customize the url setting to fix incorrect asset URLs.
-function my_lzb_url( $url ) {
-    return MY_LZB_URL;
+function ww4kofi_lzb_url( $url ) {
+    return WW4KOFI_LZB_URL;
 }
-add_filter( 'lzb/plugin_url', 'my_lzb_url' );
+add_filter( 'lzb/plugin_url', 'ww4kofi_lzb_url' );
+
+function enqueue_kofi_javascript()
+{	
+	// Add to footer section.
+    wp_register_script( 'ko-fi-widget', 'https://ko-fi.com/widgets/widget_2.js', array(), '2', true );
+ 
+    wp_enqueue_script( 'ko-fi-widget' );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_kofi_javascript' );
 
 if ( function_exists( 'lazyblocks' ) ) :
 
@@ -158,7 +175,6 @@ if ( function_exists( 'lazyblocks' ) ) :
     <p>{{ description }}</p>
     {{/if}}
     
-    <script type=\'text/javascript\' src=\'https://ko-fi.com/widgets/widget_2.js\'></script>
     <script type=\'text/javascript\'>
         kofiwidget2.init(\'{{ button-text }}\', \'{{ button-color }}\', \'{{ ko-fi-code-or-username }}\');kofiwidget2.draw();
     </script> ',
