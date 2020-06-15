@@ -24,8 +24,8 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'WILL_WORK_FOR_KO_FI_SLIDER_PLUGIN_NAME', 'will-work-for-ko-fi-plugin' );
-define( 'WILL_WORK_FOR_KO_FI_SLIDER_PLUGIN_VERSION', '1.2.0' );
+define( 'KOFI_JS_LIB', 'ko-fi-widget' );
+define( 'KOFI_JS_LIB_VER', '2.0' );
 
 // Define path and URL to the LZB plugin.
 define( 'WW4KOFI_LZB_PATH', plugin_dir_path( __FILE__ ) . '/inc/lzb/' );
@@ -43,9 +43,9 @@ add_filter( 'lzb/plugin_url', 'ww4kofi_lzb_url' );
 function enqueue_kofi_javascript()
 {	
 	// Add to footer section.
-    wp_register_script( 'ko-fi-widget', 'https://ko-fi.com/widgets/widget_2.js', array(), '2', true );
+    wp_register_script( KOFI_JS_LIB, 'https://ko-fi.com/widgets/widget_2.js', array(), KOFI_JS_LIB_VER, false );
  
-    wp_enqueue_script( 'ko-fi-widget' );
+    wp_enqueue_script( KOFI_JS_LIB );
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_kofi_javascript' );
 
