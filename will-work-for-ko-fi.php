@@ -42,7 +42,7 @@ add_filter( 'lzb/plugin_url', 'ww4kofi_lzb_url' );
 
 function enqueue_kofi_javascript()
 {	
-	// Add to footer section.
+	// Add to header section for now.
     wp_register_script( KOFI_JS_LIB, 'https://ko-fi.com/widgets/widget_2.js', array(), KOFI_JS_LIB_VER, false );
  
     wp_enqueue_script( KOFI_JS_LIB );
