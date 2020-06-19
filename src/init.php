@@ -66,7 +66,7 @@ function will_work_for_ko_fi_cgb_block_assets()
 	);
 
 	// Register Ko-fi button widget.
-	/*
+	/* This doesn't work for some reason.
 	wp_register_script( 
 		'ko-fi-widget-2', 
 		plugins_url('/dist/kofiwidget2.js', dirname(__FILE__)), // 

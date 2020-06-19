@@ -12,16 +12,11 @@ import "./style.scss";
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 
-// import { __experimentalInputControl as InputControl } from '@wordpress/components';
-// import { useState } from '@wordpress/compose';
-
-import ServerSideRender from "@wordpress/server-side-render";
-
-// const { withSelect } = wp.data; //import { withSelect } from "@wordpress/data";
-
 const { InspectorControls } = wp.blockEditor;
 const { PanelBody, PanelRow } = wp.components;
 const { Fragment } = wp.element;
+
+import { ColorPicker } from '@wordpress/components';
 
 const el = wp.element.createElement;
 
@@ -88,14 +83,27 @@ registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
 			event.preventDefault();
 		}
 
+		function setButtonColour( value ) {
+			setAttributes( { buttonColour: value.hex } );
+		}
+
 		kofiwidget2.init(buttonText, buttonColour, kofiID);
 		return (
 			<Fragment>
 				<InspectorControls>
 					<PanelBody title={ __('Ko-fi Button Settings') }>
 						<PanelRow>
-							<label>Button Text</label>
+							<label for="button-text">
+								Button Text
+							</label>
 							<input type="text" id="button-text" value={ buttonText } onChange={ setButtonText }/>
+						</PanelRow>
+						<PanelRow>
+							<ColorPicker
+            					color={ buttonColour }
+            					onChangeComplete={ setButtonColour }
+            					disableAlpha
+        					/>
 						</PanelRow>
 					</PanelBody>
 				</InspectorControls>
