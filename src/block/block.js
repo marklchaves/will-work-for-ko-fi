@@ -60,7 +60,7 @@ registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
 			type: "string",
 			default: "#29abe0",
 		},
-		kofiID: {
+		kofiCode: {
 			type: "string",
 			default: "D1D7YARD",
 		},
@@ -72,7 +72,7 @@ registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
 			attributes: {
 				buttonText,
 				buttonColour,
-				kofiID,
+				kofiCode,
 			},
 			setAttributes,
 		} = props;
@@ -87,7 +87,13 @@ registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
 			setAttributes( { buttonColour: value.hex } );
 		}
 
-		kofiwidget2.init(buttonText, buttonColour, kofiID);
+		function setKofiCode( event ) {
+			const value = event.target.value;
+			setAttributes( { kofiCode: value } );
+			event.preventDefault();
+		}
+
+		kofiwidget2.init(buttonText, buttonColour, kofiCode);
 		return (
 			<Fragment>
 				<InspectorControls>
@@ -105,6 +111,12 @@ registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
             					disableAlpha
         					/>
 						</PanelRow>
+						<PanelRow>
+							<label for="kofi-code">
+								Code/username
+							</label>
+							<input type="text" id="kofi-code" value={ kofiCode } onChange={ setKofiCode }/>
+						</PanelRow>
 					</PanelBody>
 				</InspectorControls>
 				<section id="ko-fi-widget">
@@ -119,12 +131,12 @@ registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
 			attributes: {
 				buttonText,
 				buttonColour,
-				kofiID,
+				kofiCode,
 			},
 			setAttributes,
 		} = props;
 
-		kofiwidget2.init(buttonText, buttonColour, kofiID);
+		kofiwidget2.init(buttonText, buttonColour, kofiCode);
 		return (
 			<section id="ko-fi-widget">
 				<div dangerouslySetInnerHTML={{ __html: kofiwidget2.getHTML() }} />

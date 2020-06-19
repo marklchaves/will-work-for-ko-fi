@@ -5,6 +5,7 @@
  * which makes it higher in priority.
  */
 
+/*
 .wp-block-cgb-block-will-work-for-ko-fi-cgb  {
   background: $green;
   border: 0.2rem solid $black;
@@ -12,4 +13,11 @@
   margin: 0 auto;
   max-width: 740px;
   padding: 2rem;
+}
+*/
+
+.components-panel__row {
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
 }
