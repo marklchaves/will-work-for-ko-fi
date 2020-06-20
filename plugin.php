@@ -1,15 +1,15 @@
 <?php
 /**
- * Plugin Name: Will Work For Ko-fi — CGB Gutenberg Block Plugin
- * Plugin URI: https://github.com/ahmadawais/create-guten-block/
- * Description: will-work-for-ko-fi-cgb — is a Gutenberg plugin created via create-guten-block.
+ * Plugin Name: Will Work For Ko-fi
+ * Plugin URI: https://github.com/marklchaves/will-work-for-ko-fi
+ * Description: A custom Gutenberg block for the Ko-fi donation button.
  * Author: caught my eye
  * Author URI: https://www.caughtmyeye.cc/
- * Version: 1.0.0
+ * Version: 2.0.0
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  *
- * @package CGB
+ * @package WILL_WORK_FOR_KO_FI
  */
 
 // Exit if accessed directly.
