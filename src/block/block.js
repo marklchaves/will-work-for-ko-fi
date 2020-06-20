@@ -16,6 +16,7 @@ const { InspectorControls } = wp.blockEditor;
 const { PanelBody, PanelRow } = wp.components;
 const { Fragment } = wp.element;
 
+import { TextControl } from '@wordpress/components';
 import { ColorPicker } from '@wordpress/components';
 
 const el = wp.element.createElement;
@@ -87,30 +88,34 @@ registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
 			setAttributes,
 		} = props;
 
-		function setHeadingText( event ) {
-			const value = event.target.value;
+		function sanitize(dirty) {
+			return DOMPurify.sanitize(dirty);
+		}
+
+		function setHeadingText( heading ) {
+			const value = sanitize(heading);
 			setAttributes( { headingText: value } );
 			event.preventDefault();
 		}
 		
-		function setDescriptionText( event ) {
-			const value = event.target.value;
+		function setDescriptionText( description ) {
+			const value = sanitize(description);
 			setAttributes( { descriptionText: value } );
 			event.preventDefault();
 		}
 
-		function setButtonText( event ) {
-			const value = event.target.value;
+		function setButtonText( button ) {
+			const value = sanitize(button);
 			setAttributes( { buttonText: value } );
 			event.preventDefault();
 		}
 
-		function setButtonColour( value ) {
-			setAttributes( { buttonColour: value.hex } );
+		function setButtonColour( colour ) {
+			setAttributes( { buttonColour: colour.hex } );
 		}
 
-		function setKofiCode( event ) {
-			const value = event.target.value;
+		function setKofiCode( kofiCode ) {
+			const value = sanitize(kofiCode);
 			setAttributes( { kofiCode: value } );
 			event.preventDefault();
 		}
@@ -121,10 +126,12 @@ registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
 				<InspectorControls>
 					<PanelBody title={ __('Ko-fi Button Settings') }>
 						<PanelRow>
-							<label for="button-text">
-								Button Text
-							</label>
-							<input type="text" id="button-text" value={ buttonText } onChange={ setButtonText }/>
+							<TextControl
+								label="Button Text"
+								id="button-text"
+        						value={ buttonText }
+        						onChange={ setButtonText }
+    						/>
 						</PanelRow>
 						<PanelRow>
 							<ColorPicker
@@ -134,25 +141,31 @@ registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
         					/>
 						</PanelRow>
 						<PanelRow>
-							<label for="kofi-code">
-								Code/username
-							</label>
-							<input type="text" id="kofi-code" value={ kofiCode } onChange={ setKofiCode }/>
+							<TextControl
+								label="Code/username"
+								id="kofi-code"
+        						value={ kofiCode }
+        						onChange={ setKofiCode }
+    						/>
 						</PanelRow>
 					</PanelBody>
 				</InspectorControls>
 				<section id="kofi-meta">
 					<div className="kofi-meta kofi-meta__row">
-						<label for="kofi-heading">
-							Heading (h3)
-						</label>
-						<input type="text" id="kofi-heading" value={ headingText } onChange={ setHeadingText }/>
+						<TextControl
+								label="Heading (h3)"
+								id="kofi-heading"
+        						value={ headingText }
+        						onChange={ setHeadingText }
+    						/>
 					</div>
 					<div className="kofi-meta kofi-meta__row">
-						<label for="kofi-description">
-							Description (p)
-						</label>
-						<input type="text" id="kofi-description" value={ descriptionText } onChange={ setDescriptionText }/>
+						<TextControl
+								label="Description (p)"
+								id="kofi-description"
+        						value={ descriptionText }
+        						onChange={ setDescriptionText }
+    						/>						
 					</div>
 				</section>
 				<section id="ko-fi-widget">
