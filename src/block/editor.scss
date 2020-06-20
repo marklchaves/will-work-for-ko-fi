@@ -5,17 +5,6 @@
  * which makes it higher in priority.
  */
 
-/*
-.wp-block-cgb-block-will-work-for-ko-fi-cgb  {
-  background: $green;
-  border: 0.2rem solid $black;
-  color: $black;
-  margin: 0 auto;
-  max-width: 740px;
-  padding: 2rem;
-}
-*/
-
 .kofi-meta {
   display: flex;
 }
@@ -28,6 +17,10 @@
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+}
+
+#kofi-heading {
+  width: $heading-width;
 }
 
 #kofi-description {
