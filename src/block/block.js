@@ -1,8 +1,5 @@
 /**
- * BLOCK: will-work-for-ko-fi-cgb
- *
- * Registering a basic block with Gutenberg.
- * Simple block, renders and saves the same content without any interactivity.
+ * BLOCK: will-work-for-ko-fi
  */
 
 //  Import CSS.
@@ -43,15 +40,14 @@ const iconEl = el('svg', { width: 24, height: 24 },
  */
 registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __("Will Work for Ko-fi - CGB Block"), // Block title.
+	title: __("Will Work for Ko-fi"), // Block title.
 	icon: iconEl, //
 	category: "widgets", // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
-		__("Will Work for Ko-fi — CGB Block"),
+		__("Will Work for Ko-fi"),
 		__("ko-fi"),
 		__("donation"),
 	],
-	/* This breaks the server side rendering of posts. */
 	attributes: {
 		headingText: {
 			type: "string",
@@ -95,19 +91,16 @@ registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
 		function setHeadingText( heading ) {
 			const value = sanitize(heading);
 			setAttributes( { headingText: value } );
-			event.preventDefault();
 		}
 		
 		function setDescriptionText( description ) {
 			const value = sanitize(description);
 			setAttributes( { descriptionText: value } );
-			event.preventDefault();
 		}
 
 		function setButtonText( button ) {
 			const value = sanitize(button);
 			setAttributes( { buttonText: value } );
-			event.preventDefault();
 		}
 
 		function setButtonColour( colour ) {
@@ -117,7 +110,6 @@ registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
 		function setKofiCode( kofiCode ) {
 			const value = sanitize(kofiCode);
 			setAttributes( { kofiCode: value } );
-			event.preventDefault();
 		}
 
 		kofiwidget2.init(buttonText, buttonColour, kofiCode);
