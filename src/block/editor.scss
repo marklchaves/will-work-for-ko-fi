@@ -16,8 +16,20 @@
 }
 */
 
-.components-panel__row {
+.kofi-meta {
+  display: flex;
+}
+
+.kofi-meta__row {
+  margin-bottom: $sm-bottom-gutter;
+}
+
+.components-panel__row, .kofi-meta__row {
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+}
+
+#kofi-description {
+  width: $tagline-width;
 }

@@ -52,6 +52,14 @@ registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
 	],
 	/* This breaks the server side rendering of posts. */
 	attributes: {
+		headingText: {
+			type: "string",
+			default: "Your Cool Heading",
+		},
+		descriptionText: {
+			type: "string",
+			default: "Your cool description goes here.",
+		},
 		buttonText: {
 			type: "string",
 			default: "hit me!",
@@ -70,12 +78,26 @@ registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
 	edit: function (props) {
 		const {
 			attributes: {
+				headingText,
+				descriptionText,
 				buttonText,
 				buttonColour,
 				kofiCode,
 			},
 			setAttributes,
 		} = props;
+
+		function setHeadingText( event ) {
+			const value = event.target.value;
+			setAttributes( { headingText: value } );
+			event.preventDefault();
+		}
+		
+		function setDescriptionText( event ) {
+			const value = event.target.value;
+			setAttributes( { descriptionText: value } );
+			event.preventDefault();
+		}
 
 		function setButtonText( event ) {
 			const value = event.target.value;
@@ -119,6 +141,20 @@ registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
 						</PanelRow>
 					</PanelBody>
 				</InspectorControls>
+				<section id="kofi-meta">
+					<div className="kofi-meta kofi-meta__row">
+						<label for="kofi-heading">
+							Heading (h3)
+						</label>
+						<input type="text" id="kofi-heading" value={ headingText } onChange={ setHeadingText }/>
+					</div>
+					<div className="kofi-meta kofi-meta__row">
+						<label for="kofi-description">
+							Description (p)
+						</label>
+						<input type="text" id="kofi-description" value={ descriptionText } onChange={ setDescriptionText }/>
+					</div>
+				</section>
 				<section id="ko-fi-widget">
 					<div dangerouslySetInnerHTML={{ __html: kofiwidget2.getHTML() }} />
 				</section>
@@ -129,18 +165,27 @@ registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
 	save: function( props ) {
 		const {
 			attributes: {
+				headingText,
+				descriptionText,
 				buttonText,
 				buttonColour,
 				kofiCode,
 			},
-			setAttributes,
 		} = props;
 
 		kofiwidget2.init(buttonText, buttonColour, kofiCode);
 		return (
-			<section id="ko-fi-widget">
-				<div dangerouslySetInnerHTML={{ __html: kofiwidget2.getHTML() }} />
-			</section>
+			<article>
+				<section>
+					<h3>{ headingText }</h3>
+				</section>
+				<section>
+					<p>{ descriptionText }</p>
+				</section>
+				<section id="ko-fi-widget">
+					<div dangerouslySetInnerHTML={{ __html: kofiwidget2.getHTML() }} />
+				</section>
+			</article>
 		);
 	}
 });
