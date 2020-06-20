@@ -28,9 +28,20 @@ function enqueue_kofi_javascript_2()
 	);
 
 	wp_enqueue_script('ko-fi-widget-2');
+
+	// Add to header section for now.
+	wp_register_script(
+		'dom-purify', 
+		plugins_url('/dist/purify.min.js', dirname(__FILE__)),
+		array(), 
+		'2.0.11', 
+		false
+	);
+	
+	wp_enqueue_script('dom-purify');
 }
 add_action('admin_enqueue_scripts', 'enqueue_kofi_javascript_2');
-// add_action('wp_enqueue_scripts', 'enqueue_kofi_javascript_2');
+add_action('wp_enqueue_scripts', 'enqueue_kofi_javascript_2');
 
 /**
  * Enqueue Gutenberg block assets for both frontend + backend.
