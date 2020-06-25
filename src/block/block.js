@@ -21,7 +21,7 @@ const el = wp.element.createElement;
 /**
  * coffee icon by walkerstudio13 on the Noun Project.
 */
-const iconEl = el('svg', { width: 20, height: 20 },
+const iconEl = el('svg', { width: 24, height: 24 },
   el('path', { d: "M9.69,29.48V15.47c-3.58,0.32-6.39,3.34-6.39,7S6.11,29.15,9.69,29.48z" } ),
   el('polygon', { points: "32.7,12.89 10.97,12.89 10.97,14.8 10.97,30.15 10.97,32.06 32.7,32.06" } ),
   el('path', { d: "M14.16,9.05c0.35,0,0.64-0.29,0.64-0.64V4.58c0-0.35-0.29-0.64-0.64-0.64s-0.64,0.29-0.64,0.64v3.84   C13.53,8.76,13.81,9.05,14.16,9.05z" } ),
@@ -55,15 +55,15 @@ registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
 	attributes: {
 		headingText: {
 			type: "string",
-			default: "Your Cool Heading",
+			default: "",
 		},
 		descriptionText: {
 			type: "string",
-			default: "Your cool description goes here.",
+			default: "",
 		},
 		buttonText: {
 			type: "string",
-			default: "hit me!",
+			default: "Support me on Ko-fi",
 		},
 		buttonColour: {
 			type: "string",
@@ -71,7 +71,7 @@ registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
 		},
 		kofiCode: {
 			type: "string",
-			default: "D1D7YARD",
+			default: "",
 		},
 	},
 
@@ -151,7 +151,8 @@ registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
 						<TextControl
 								label="Heading (h3)"
 								id="kofi-heading"
-        						value={ headingText }
+								value={ headingText }
+								placeholder="Make a Statement"
         						onChange={ setHeadingText }
     						/>
 					</div>
@@ -159,7 +160,8 @@ registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
 						<TextControl
 								label="Description (p)"
 								id="kofi-description"
-        						value={ descriptionText }
+								value={ descriptionText }
+								placeholder="Nice place for a tag line or a CTA."
         						onChange={ setDescriptionText }
     						/>						
 					</div>
