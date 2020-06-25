@@ -28,10 +28,10 @@ Edit: <strike>Will Work for Ko-fi_ needs the Lazy Blocks plugin to run properly.
 1. Open a page or post in Gutenberg.
 1. Click on the `+` to add a block.
 1. Start typing "Will Work for Ko-fi" until you see the block appear, then select it.
-1. Enter an optional heading or short description.
-1. Enter the text you want on your button. This is important! Keep it short.
-1. Use the colour picker for the button's background.
-1. Don't forget to enter your Ko-fi _code_ or username.
+1. Inside the block, enter an optional heading or short description into the respective input fields.
+1. In the settings sidebar, enter the text you want on your button. This is important! Keep it short.
+1. In the settings sidebar, use the colour picker for the button's background.
+1. Remember to enter your Ko-fi _code_ or username. This is also in the settings sidebar.
 1. Preview, Update, or Publish your page or post and enjoy ;-)
 
 ## Frequently Asked Questions
