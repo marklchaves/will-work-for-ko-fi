@@ -1,0 +1,28 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.kofi-meta {
+  display: flex;
+}
+
+.kofi-meta__row {
+  margin-bottom: $sm-bottom-gutter;
+}
+
+.components-panel__row, .kofi-meta__row {
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+#kofi-heading {
+  width: $heading-width;
+}
+
+#kofi-description {
+  width: $tagline-width;
+}
