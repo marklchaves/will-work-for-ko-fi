@@ -2,6 +2,8 @@
 
 # Will Work for Ko-fi 
 
+![Will Work for Ko-fi logo by walkerstudio13 on the Noun Project](https://ps.w.org/will-work-for-ko-fi/assets/icon-256x256.png?rev=2330722)
+
 Custom Gutenberg Block (CGB) for the Ko-fi donation button.
  
 ## Description
@@ -34,9 +36,15 @@ Edit: <strike>Will Work for Ko-fi_ needs the Lazy Blocks plugin to run properly.
 1. Remember to enter your Ko-fi _code_ or username. This is also in the settings sidebar.
 1. Preview, Update, or Publish your page or post and enjoy ;-)
 
+#### NEW
+
+Live button preview in the block editor.
+
+![New live button preview in the block editor](https://ps.w.org/will-work-for-ko-fi/assets/screenshot-4.png?rev=2330733)
+
 ## Frequently Asked Questions
 
-= Is WW4KOFI v2 lightweight? = 
+### Is WW4KOFI v2 lightweight?
 
 Yes. It's only 47 KB zipped. And, it uses its' own local copy of the official Ko-fi widget JavaScript library.
 
