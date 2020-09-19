@@ -20,7 +20,7 @@ This custom Gutenberg Block (CGB) for the Ko-fi donation button allows you to:
 
 ## Installation
 
-1. Upload the plugin zip file to the `/wp-content/plugins/will-work-for-ko-fi` directory, or install the plugin through the WordPress plugins page directly.
+1. Upload the **contents** of plugin zip file to the `/wp-content/plugins/will-work-for-ko-fi` directory, or install the plugin through the WordPress plugins page directly.
 1. Activate the plugin through the 'Plugins' page.
 
 Edit: <strike>Will Work for Ko-fi_ needs the Lazy Blocks plugin to run properly. Please install Lazy Blocks.</strike>
