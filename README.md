@@ -40,7 +40,9 @@ Edit: <strike>Will Work for Ko-fi_ needs the Lazy Blocks plugin to run properly.
 
 Live button preview in the block editor.
 
-![New live button preview in the block editor](https://ps.w.org/will-work-for-ko-fi/assets/screenshot-4.png?rev=2330733)
+![New live button preview in the block editor](https://ps.w.org/will-work-for-ko-fi/assets/screenshot-4.png)
+
+Check out the [video of the new live button preview in the block editor](https://i.imgur.com/5NebuF9.mp4).
 
 ## Frequently Asked Questions
 
