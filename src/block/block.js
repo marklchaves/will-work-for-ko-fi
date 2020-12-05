@@ -29,6 +29,11 @@ const iconEl = el('svg', { width: 24, height: 24 },
   el('path', { d: "M29.51,9.05c0.35,0,0.64-0.29,0.64-0.64V4.58c0-0.35-0.29-0.64-0.64-0.64c-0.35,0-0.64,0.29-0.64,0.64v3.84   C28.87,8.76,29.15,9.05,29.51,9.05z" } )
 );
 
+const sectionStyles = {
+	paddingTop: ".45rem",
+	paddingBottom: "0"
+};
+  
 /**
  * Register: aa Gutenberg Block.
  *
@@ -187,13 +192,13 @@ registerBlockType("cgb/block-will-work-for-ko-fi-cgb", {
 		kofiwidget2.init(buttonText, buttonColour, kofiCode);
 		return (
 			<article>
-				<section>
+				<section className="section__kofi">
 					<h3>{ headingText }</h3>
 				</section>
-				<section>
+				<section className="section__kofi">
 					<p>{ descriptionText }</p>
 				</section>
-				<section id="ko-fi-widget">
+				<section id="ko-fi-widget" className="section__kofi">
 					<div dangerouslySetInnerHTML={{ __html: kofiwidget2.getHTML() }} />
 				</section>
 			</article>
