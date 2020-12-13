@@ -85,9 +85,26 @@ You can change the content alignment by using [additional CSS](https://medium.co
 }
 ```
 
+Version 2.1.0 introduced the `.section__kofi` CSS class that controls the top/bottom padding for the widget's heading, description, and button.
+
+```css
+.section__kofi {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+```
+
 ### Do I need to install the Lazy Blocks plugin too?
 
 No. Version 2.0.0 does not rely on any third-party plugins. Lazy Blocks is deprecated in v2.0.0.
+
+### I'm seeing a "This block contains invalid or unexpected content" error message. What must I do to fix it?
+
+Click on the ellipses (...), then select **Attempt Block Recovery**.
+
+See the screengrab below.
+
+![Invalid or unexpected content error](/screengrabs/ww4kofi-block-recovery.png)
 
 ---
 
