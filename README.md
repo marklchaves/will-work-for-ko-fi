@@ -100,7 +100,7 @@ No. Version 2.0.0 does not rely on any third-party plugins. Lazy Blocks is depre
 
 ### I'm seeing a "This block contains invalid or unexpected content" error message. What must I do to fix it?
 
-Click on the ellipses (...), then select **Attempt Block Recovery**.
+Click on the horizontal ellipses (...) on the right, then select **Attempt Block Recovery**.
 
 See the screengrab below.
 
