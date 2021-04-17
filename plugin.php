@@ -5,7 +5,7 @@
  * Description: A custom Gutenberg block for the Ko-fi donation button.
  * Author: caught my eye
  * Author URI: https://www.caughtmyeye.cc/
- * Version: 2.1.0
+ * Version: 2.1.1
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  *
